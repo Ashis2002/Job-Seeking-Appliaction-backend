@@ -4,7 +4,7 @@ import ErrorHandler from "../middlewares/error.js";
 import { sendToken } from "../utils/jwtToken.js";
 
 export const register = catchAsyncErrors(async (req, res, next) => {
-  const { name, email, phone, password, role } = req.body;
+  const { name, email, phone, password, role } = req.body; 
   if (!name || !email || !phone || !password || !role) {
     return next(new ErrorHandler("Please fill full form!"));
   }
@@ -59,6 +59,7 @@ export const logout = catchAsyncErrors(async (req, res, next) => {
 
 export const getUser = catchAsyncErrors((req, res, next) => {
   const user = req.user;
+  
   res.status(200).json({
     success: true,
     user,
