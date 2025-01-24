@@ -7,6 +7,9 @@ cloudinary.v2.config({
     api_secret: process.env.CLOUDINARY_CLIENT_SECRET,
   });
 
+  console.log(process.env.COOKIE_EXPIRE * 24 * 60 * 60 * 1000);
+  
+
 app.listen(process.env.PORT, () => {
     console.log(`Server running at port ${process.env.PORT}`);
   });
